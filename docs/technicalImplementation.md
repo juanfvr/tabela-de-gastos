@@ -1,12 +1,13 @@
 ## UI/UX
-- Mobile-first design
-- 4-Point Grid System
-- Tema claro/escuro
-
-
+- Mobile-first design;
+- 4-Point Grid System;
+- Tema claro/escuro;
+--- 
 
 ## Implementação de Técnica
 - Adicionar, editar e remover itens na tabela de gastos
+- Formatação:
+    - Valor (R$) deve ter suas casas de milhar, centena e decimal separadas por ","
 - Cada item da planilha deve ter:
 	- nome da compra;
 	- link do produto; (desktop only)
