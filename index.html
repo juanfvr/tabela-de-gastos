@@ -1,117 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="./css/output.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
     <script type="module" src="./js/formulario.js" defer></script>
     <script type="module" src="./js/storage.js" defer></script>
     <script type="module" src="./js/components/table.js" defer></script>
     <script type="module" src="./js/validacao.js" defer></script>
-</head>
+  </head>
 
-<body class="bg-zinc-950 text-sky-50 my-8 sm:mx-14 mx-4  ">
-    <header class="mb-4">
-        <h1 class="text-4xl sm:text-5xl text-amber-600 font-bold">Tabela de Gastos</h1>
+  <body class="bg-zinc-950 text-sky-50">
+    <header class="">
+      <h1 class="text-4xl sm:text-5xl text-sky-500 font-bold">
+        Tabela de Gastos
+      </h1>
     </header>
 
     <!-- form -->
     <section>
-        <form action="" class="flex gap-2 flex-col">
-            <label for="" class="flex-1">
-                <span class="text-md sm:text-xl">Nome</span>
-                <input 
-                id="input-nome" 
-                type="text" 
-                placeholder="ar condicionado 12000btus" 
-                class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl 
-                outline-none border-2 border-amber-500">
-            </label>
-            <label for="" class="flex-1">
-                <span class="text-md sm:text-xl">Link</span>
-                <input 
-                id="input-link" 
-                type="text" 
-                placeholder="https://www.exemplo.com.br/" 
-                class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl 
-                outline-none border-2 border-amber-500">
-
-            </label>
-            <div class="flex flex-row gap-2">
-                <label for="" class="flex-1">
-                    <span class="text-md sm:text-xl">Data da compra</span>
-                    <input 
-                    id="input-data" 
-                    type="date" 
-                    placeholder="dd/mm/aa" 
-                    class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl 
-                    outline-none border-2 border-amber-500">
-
-                </label>
-                <label for="" class="flex-1">
-                    <span class="text-md sm:text-xl">Valor da compra</span>
-                    <input 
-                    id="input-valor" 
-                    type="number" placeholder="R$0,000,00" 
-                    class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl outline-none 
-                    border-2 border-amber-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none 
-                    [&::-webkit-inner-spin-button]:appearance-none">
-                </label>
-            </div>
-            <button
-                type="submit"
-                id="btn-enviar"
-                class="flex-1 p-4 text-sm sm:text-xl rounded-2xl 
-                font-semibold outline-none bg-gradient-to-r
-                 from-amber-600 to-amber-500">
-                Adicionar
-            </button>
-        </form>
+      <form action="" class="flex flex-col">
+        <label class="flex-1">
+          <span class="text-md font-semibold sm:text-xl">Nome</span>
+          <input
+            id="input-nome"
+            type="text"
+            placeholder="ar condicionado 12000btus"
+            class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-sky-700"
+          />
+        </label>
+        <label class="flex-1">
+          <span class="text-md font-semibold sm:text-xl">Link</span>
+          <input
+            id="input-link"
+            type="text"
+            placeholder="https://www.exemplo.com.br/"
+            class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-sky-700"
+          />
+        </label>
+        <div class="flex flex-row gap-2">
+          <label class="flex-1">
+            <span class="text-md font-semibold sm:text-xl">Data da compra</span>
+            <input
+              id="input-data"
+              type="date"
+              class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-sky-700"
+            />
+          </label>
+          <label class="flex-1">
+            <span class="text-md font-semibold sm:text-xl">Valor</span>
+            <input
+              id="input-valor"
+              type="number"
+              placeholder="R$0,000,00"
+              class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-sky-700 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            />
+          </label>
+        </div>
+        <button
+          type="submit"
+          id="btn-enviar"
+          class="flex-1 mt-2 p-4 text-md sm:text-xl rounded-lg font-semibold outline-none bg-gradient-to-r from-sky-700 to-sky-500"
+        >
+          Adicionar
+        </button>
+      </form>
     </section>
 
     <!-- gastos -->
     <section class="mt-8">
-        <div class="overflow-x-auto h-[400px]">
-            <table id="table"
-                class="w-full text-sm opacity-25 text-left rtl:text-right h-24 text-gray-500
-                 dark:text-gray-400 rounded-t-lg rounded-b-lg overflow-hidden">
-                <thead class="shadow-md">
-                    <tr class="sticky top-0 text-xs text-gray-700 uppercase shadow-zinc-800 shadow-sm border-b border-zinc-800
-                    bg-gray-50 dark:bg-zinc-900 dark:text-gray-400">
-                        <th scope="col" class="px-6 py-3 table-cell">
-                            Nome
-                        </th>
-                        <th scope="col" class="px-6 py-3 hidden md:table-cell">
-                            Link
-                        </th>
-                        <th scope="col" class="px-6 py-3 hidden sm:table-cell">
-                            Data
-                        </th>
-                        <th scope="col" class="px-6 py-3 table-cell">
-                            Valor
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="table-body" class="">
-                </tbody>
-                <tfoot class="">
-                    <tr class="sticky bottom-0 shadow-sm dark:bg-zinc-900">
-                        <th
-                        id="table-foot"
-                        scope="row"
-                        class="px-6 py-3 font-bold text-md text-gray-900 whitespace-nowrap dark:text-white">
-                        Total:</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+      <div class="h-[280px]">
+        <table
+          id="table"
+          class="w-full text-sm opacity-25 text-left text-gray-400 overflow-hidden"
+        >
+          <thead>
+            <tr
+              class="sticky top-0 text-xs text-gray-400 uppercase border-b border-zinc-800 bg-zinc-900"
+            >
+              <th class="p-4 table-cell">Nome</th>
+              <th class="p-4 hidden md:table-cell">Link</th>
+              <th class="p-4 hidden sm:table-cell">Data</th>
+              <th class="p-4 table-cell">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+          <tfoot>
+            <tr class="bg-zinc-900">
+              <th id="table-foot" class="p-4 font-bold text-md text-gray-400">
+                Total:
+              </th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
