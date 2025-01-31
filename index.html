@@ -1,117 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="./css/output.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
     <script type="module" src="./js/formulario.js" defer></script>
     <script type="module" src="./js/storage.js" defer></script>
     <script type="module" src="./js/components/table.js" defer></script>
     <script type="module" src="./js/validacao.js" defer></script>
-</head>
 
-<body class="bg-zinc-950 text-sky-50 my-8 sm:mx-14 mx-4  ">
-    <header class="mb-4">
-        <h1 class="text-4xl sm:text-5xl text-amber-600 font-bold">Tabela de Gastos</h1>
+    <style>
+      * {
+        font-family: Inter, sans-serif;
+      }
+
+      /* Custom scrollbar styles */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 12px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d2d2d;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #4a4a4a;
+        border-radius: 6px;
+        border: 3px solid #2d2d2d;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+
+  <body class="bg-neutral-950 text-sky-50">
+    <header class="mx-8 mt-4">
+      <h1 class="text-3xl sm:text-4xl uppercase text-blue-800 font-bold">
+        Tabela de Gastos
+      </h1>
     </header>
 
     <!-- form -->
-    <section>
-        <form action="" class="flex gap-2 flex-col">
-            <label for="" class="flex-1">
-                <span class="text-md sm:text-xl">Nome</span>
-                <input 
-                id="input-nome" 
-                type="text" 
-                placeholder="ar condicionado 12000btus" 
-                class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl 
-                outline-none border-2 border-amber-500">
-            </label>
-            <label for="" class="flex-1">
-                <span class="text-md sm:text-xl">Link</span>
-                <input 
-                id="input-link" 
-                type="text" 
-                placeholder="https://www.exemplo.com.br/" 
-                class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl 
-                outline-none border-2 border-amber-500">
-
-            </label>
-            <div class="flex flex-row gap-2">
-                <label for="" class="flex-1">
-                    <span class="text-md sm:text-xl">Data da compra</span>
-                    <input 
-                    id="input-data" 
-                    type="date" 
-                    placeholder="dd/mm/aa" 
-                    class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl 
-                    outline-none border-2 border-amber-500">
-
-                </label>
-                <label for="" class="flex-1">
-                    <span class="text-md sm:text-xl">Valor da compra</span>
-                    <input 
-                    id="input-valor" 
-                    type="number" placeholder="R$0,000,00" 
-                    class="w-full p-1 px-2 text-sm sm:text-md font-semibold rounded-2xl outline-none 
-                    border-2 border-amber-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none 
-                    [&::-webkit-inner-spin-button]:appearance-none">
-                </label>
-            </div>
-            <button
-                type="submit"
-                id="btn-enviar"
-                class="flex-1 p-4 text-sm sm:text-xl rounded-2xl 
-                font-semibold outline-none bg-gradient-to-r
-                 from-amber-600 to-amber-500">
-                Adicionar
-            </button>
-        </form>
+    <section class="mx-8 mt-4">
+      <form class="flex flex-col">
+        <label class="flex-1">
+          <span class="text-md font-semibold sm:text-xl">Nome</span>
+          <input
+            id="input-nome"
+            autocomplete="off"
+            type="text"
+            placeholder="ar condicionado 12000btus"
+            class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-blue-900 transition-all ease-in-out duration-100 focus:shadow-md focus:shadow-blue-700/25"
+          />
+        </label>
+        <label class="flex-1">
+          <span class="text-md font-semibold sm:text-xl">Link</span>
+          <input
+            id="input-link"
+            autocomplete="off"
+            type="text"
+            placeholder="https://www.exemplo.com.br/"
+            class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-blue-900 transition-all ease-in-out duration-100 focus:shadow-md focus:shadow-blue-700/25"
+          />
+        </label>
+        <div class="flex flex-row gap-2">
+          <label class="flex-1">
+            <span class="text-md font-semibold sm:text-xl">Data da compra</span>
+            <input
+              id="input-data"
+              autocomplete="off"
+              type="date"
+              class="w-full p-2 px-3 text-sm sm:text-md font-medium rounded-lg outline-none border-2 border-blue-900 transition-all ease-in-out duration-100 focus:shadow-md focus:shadow-blue-700/25"
+            />
+          </label>
+          <label class="flex-1">
+            <span class="text-md font-semibold sm:text-xl">Valor</span>
+            <input
+              id="input-valor"
+              autocomplete="off"
+              type="number"
+              placeholder="R$0,000,00"
+              class="w-full p-2 px-3 text-sm sm:text-md font-medium transition-all ease-in-out duration-100 focus:shadow-md focus:shadow-blue-700/25 rounded-lg outline-none border-2 border-blue-900 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            />
+          </label>
+        </div>
+        <button
+          type="submit"
+          id="btn-enviar"
+          class="flex-1 mt-2 transition-all ease-in-out duration-300 hover:scale-[1.01] hover:shadow-blue-700/25 hover:shadow-lg py-2 sm:p-4 text-md sm:text-xl rounded-lg border-2 border-blue-800 font-semibold outline-none bg-gradient-to-br from-blue-950 to-blue-900"
+        >
+          <span class="">Adicionar</span>
+        </button>
+      </form>
     </section>
 
     <!-- gastos -->
-    <section class="mt-8">
-        <div class="overflow-x-auto h-[400px]">
-            <table id="table"
-                class="w-full text-sm opacity-25 text-left rtl:text-right h-24 text-gray-500
-                 dark:text-gray-400 rounded-t-lg rounded-b-lg overflow-hidden">
-                <thead class="shadow-md">
-                    <tr class="sticky top-0 text-xs text-gray-700 uppercase shadow-zinc-800 shadow-sm border-b border-zinc-800
-                    bg-gray-50 dark:bg-zinc-900 dark:text-gray-400">
-                        <th scope="col" class="px-6 py-3 table-cell">
-                            Nome
-                        </th>
-                        <th scope="col" class="px-6 py-3 hidden md:table-cell">
-                            Link
-                        </th>
-                        <th scope="col" class="px-6 py-3 hidden sm:table-cell">
-                            Data
-                        </th>
-                        <th scope="col" class="px-6 py-3 table-cell">
-                            Valor
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="table-body" class="">
-                </tbody>
-                <tfoot class="">
-                    <tr class="sticky bottom-0 shadow-sm dark:bg-zinc-900">
-                        <th
-                        id="table-foot"
-                        scope="row"
-                        class="px-6 py-3 font-bold text-md text-gray-900 whitespace-nowrap dark:text-white">
-                        Total:</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+    <section class="overflow-auto my-4 mx-8 h-[320px] sm:h-[364px]">
+      <div class="overflow-auto max-h-[364px] custom-scrollbar">
+        <table id="table" class="w-full text-sm text-left text-gray-400">
+          <thead class="sticky top-0 bg-zinc-950">
+            <tr
+              class="text-xs text-gray-400 border-b-1 uppercase border-zinc-900/25 bg-zinc-950">
+              <th class="px-6 py-4 table-cell">Nome</th>
+              <th class="px-6 py-4 hidden md:table-cell">Link</th>
+              <th class="px-6 py-4 hidden sm:table-cell">Data</th>
+              <th class="px-6 py-4 table-cell">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+          <tfoot class="sticky bottom-0 bg-zinc-950">
+            <tr class="">
+              <th id="table-foot" class="px-6 py-4 table-cell">Total</th>
+              <td class="px-6 py-4 hidden md:table-cell"></td>
+              <td class="px-6 py-4 hidden sm:table-cell"></td>
+              <td class="px-6 py-4 table-cell"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
