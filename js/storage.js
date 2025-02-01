@@ -1,12 +1,16 @@
-export const userGastos = [
-    // {nome: "a", link: "hdasd", data: "01/02/2014", valor: 1000},
-    // {nome: "b", link: "bbbbb", data: "01/02/2014", valor: 2000}
-];
+export let userGastos = JSON.parse(localStorage.getItem('gastos')) || [];
 
 export const addGasto = (nome, link, data, valor) => {
-    userGastos.push(
-        {nome: String(nome), link: link, data: data, valor: Number(valor)}
-    )
-}
+    const novoGasto = {
+        nome: nome,
+        link: link,
+        data: data,
+        valor: valor
+    };
 
-console.log('storage.js: ok')
+    userGastos.push(novoGasto);
+    localStorage.setItem('gastos', JSON.stringify(userGastos));
+};
+
+localStorage.clear();
+console.log('storage.js: ok');
