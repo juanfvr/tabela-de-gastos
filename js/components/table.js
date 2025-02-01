@@ -14,24 +14,24 @@ export const atualizarTabela = () => {
 
     userGastos.map(item => {
         tableBody.innerHTML += 
-        `<tr class="bg-white border-b overflow-x-hidden bg-zinc-950 dark:border-zinc-900/25 border-gray-200">
-            <th scope="row" class="w-50% md:w-25% px-6 py-4 font-medium text-gray-900 dark:text-white">
-            ${item.nome}
+        `<tr class="overflow-x-hidden border-b border-gray-600 bg-zinc-900 ">
+            <th scope="row" class="p-4 font-medium">
+                ${item.nome}
             </th>
-            <td class="px-6 hidden md:table-cell py-4 underline">
+            <td class="hidden md:table-cell p-4 underline">
                 <a href="${item.link}" class="h-full" target="_blank">${isLinkNull(item.link)}</a>
             </td>
-            <td class="px-6 place-self-start py-4 hidden sm:table-cell">
+            <td class="hidden sm:table-cell p-4">
                 ${item.data}
             </td>
-            <td class="px-6 py-4">
+            <td class="p-4">
                 R$${item.valor}
             </td>
         </tr>`;
     });
 
     const valorTotal = userGastos
-        .map(item => item.valor)
+        .map(item => Number(item.valor))
         .reduce((acumulador, valorInicial) => acumulador + valorInicial, 0)
     tableFoot.innerHTML = `Total: R$${Math.floor(valorTotal, 2)}`
 
