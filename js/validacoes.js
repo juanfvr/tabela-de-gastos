@@ -1,7 +1,16 @@
-// import inputLink from "./formulario";
+export const validarNome = (nome) => {
+    return nome === "";
+}
 
-// const validacaoLink =  /^(https?:\/\/)([\w-]+(\.[\w-]+)+)(:\d{1,5})?(\/[^\s?#]*)?(\?[^\s#]*)?(#[^\s]*)?$/;
+export const validarLink = (link) => {
+    const regexLink =  new RegExp(/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/);
+        return regexLink.test(link);
+}
 
-// console.log(validacaoLink.test(inputLink))
+export const validarData = (data) => {
+    return data === "";
+}
 
-// console.log('validacao.js: ok')
+export const validarValor = (valor) => {
+    return valor === "";
+}
