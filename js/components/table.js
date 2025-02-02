@@ -1,6 +1,6 @@
 import { userGastos } from '../storage.js';
 
-export const atualizarTabela = () => {
+export const mostrarTabela = () => {
     const table = document.querySelector('table');
     const tableBody = document.querySelector("#table-body");
     const tableFoot = document.querySelector("#table-foot")
@@ -15,17 +15,17 @@ export const atualizarTabela = () => {
     userGastos.map(item => {
         tableBody.innerHTML += 
         `<tr class="overflow-x-hidden border-b border-gray-600 bg-zinc-900 ">
-            <th scope="row" class="p-4 font-medium">
+            <th id="item-nome" scope="row" class="p-4 font-medium">
                 ${item.nome}
             </th>
-            <td class="hidden md:table-cell p-4 underline">
+            <td id="item-link" class="hidden md:table-cell p-4 underline font-medium">
                 <a href="${item.link}" class="h-full" target="_blank">${isLinkNull(item.link)}</a>
             </td>
-            <td class="hidden sm:table-cell p-4">
+            <td id="item-data" class="hidden sm:table-cell p-4 font-medium">
                 ${item.data}
             </td>
-            <td class="p-4">
-                R$${item.valor}
+            <td class="flex justify-between p-4 font-medium">
+                ${item.valor}
             </td>
         </tr>`;
     });

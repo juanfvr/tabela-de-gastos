@@ -1,7 +1,7 @@
 import { addGasto, userGastos } from './storage.js';
-import { atualizarTabela } from './components/table.js';
+import { mostrarTabela } from './components/table.js';
 import { validarNome, validarLink, validarData, validarValor } from './validacoes.js';
-import { ModalErro } from './components/modal.js';
+import { ModalErro } from './components/modalErro.js';
 
 const inputNome = document.querySelector("#input-nome");
 const inputLink = document.querySelector("#input-link");
@@ -32,7 +32,7 @@ const enviarGastos = () => {
     inputLink.value = ""
     inputData.value = ""
     inputValor.value = ""
-    atualizarTabela();
+    mostrarTabela();
 }
 
 document.querySelector("#btn-enviar").addEventListener("click", (event) => {
@@ -41,5 +41,5 @@ document.querySelector("#btn-enviar").addEventListener("click", (event) => {
     console.log(userGastos)
 })
 
-atualizarTabela();
+mostrarTabela();
 console.log('form.js: ok')
